@@ -90,12 +90,12 @@
 	<g:select name="role" from="${com.rams.Role?.values()}" keys="${com.rams.Role.values()*.name()}" required="" value="${userInstance?.role?.name()}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'EID', 'error')} ">
-	<label for="EID">
-		<g:message code="user.EID.label" default="EID" />
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'eid', 'error')} ">
+	<label for="eid">
+		<g:message code="user.eid.label" default="Eid" />
 		
 	</label>
-	<g:textField name="EID" pattern="${userInstance.constraints.EID.matches}" value="${userInstance?.EID}"/>
+	<g:textField name="eid" pattern="${userInstance.constraints.eid.matches}" value="${userInstance?.eid}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'brandNew', 'error')} ">

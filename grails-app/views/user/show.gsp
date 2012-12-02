@@ -122,11 +122,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${userInstance?.EID}">
+				<g:if test="${userInstance?.eid}">
 				<li class="fieldcontain">
-					<span id="EID-label" class="property-label"><g:message code="user.EID.label" default="EID" /></span>
+					<span id="eid-label" class="property-label"><g:message code="user.eid.label" default="Eid" /></span>
 					
-						<span class="property-value" aria-labelledby="EID-label"><g:fieldValue bean="${userInstance}" field="EID"/></span>
+						<span class="property-value" aria-labelledby="eid-label"><g:fieldValue bean="${userInstance}" field="eid"/></span>
 					
 				</li>
 				</g:if>

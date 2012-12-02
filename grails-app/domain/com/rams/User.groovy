@@ -14,7 +14,7 @@ class User {
     Date birthdate
     Sex sex
     Role role
-    String EID
+    String eid
     String password
 
     // Certain things were mentioned as entered the first time the user logs in
@@ -33,7 +33,7 @@ class User {
 	fname(blank:false)
 
 	// middle initial
-	mi(matches:'[A-Z]{1}',blank:true)
+	mi(matches:'[A-Z]{1}',blank:true, nullable: true)
 
 	// street address
 	address(blank:false)
@@ -51,18 +51,18 @@ class User {
 	phoneNumber(matches:'[0-9]{10}')
 
 	// they were born, at some point
-	birthdate(nullable:false)
+	birthdate(nullable:true)
 
 	// a gender
-	sex(nullable:false)
+	sex(nullable:true)
 
 	// user has a role
-	role(nullable:false
+	role(nullable:true
 		//TODO no removing admin logic
 		)
 
 	// employee id. 6 was chosen just because
-	EID(matches:'[0-9]{6}')
+	eid(matches:'[0-9]{6}')
 
 	/*
 	 * We require certain information to be entered on first log in
