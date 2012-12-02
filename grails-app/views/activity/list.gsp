@@ -28,13 +28,13 @@
 					
 						<g:sortableColumn property="number" title="${message(code: 'activity.number.label', default: 'Number')}" />
 					
-						<g:sortableColumn property="date" title="${message(code: 'activity.date.label', default: 'Date')}" />
-					
 						<g:sortableColumn property="startTime" title="${message(code: 'activity.startTime.label', default: 'Start Time')}" />
 					
 						<g:sortableColumn property="endTime" title="${message(code: 'activity.endTime.label', default: 'End Time')}" />
 					
 						<g:sortableColumn property="maxEnrollment" title="${message(code: 'activity.maxEnrollment.label', default: 'Max Enrollment')}" />
+					
+						<g:sortableColumn property="minAge" title="${message(code: 'activity.minAge.label', default: 'Min Age')}" />
 					
 					</tr>
 				</thead>
@@ -46,13 +46,13 @@
 					
 						<td>${fieldValue(bean: activityInstance, field: "number")}</td>
 					
-						<td><g:formatDate date="${activityInstance.date}" /></td>
-					
 						<td><g:formatDate date="${activityInstance.startTime}" /></td>
 					
 						<td><g:formatDate date="${activityInstance.endTime}" /></td>
 					
 						<td>${fieldValue(bean: activityInstance, field: "maxEnrollment")}</td>
+					
+						<td>${fieldValue(bean: activityInstance, field: "minAge")}</td>
 					
 					</tr>
 				</g:each>

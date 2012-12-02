@@ -18,14 +18,6 @@
 	<g:textField name="number" pattern="${activityInstance.constraints.number.matches}" value="${activityInstance?.number}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: activityInstance, field: 'date', 'error')} required">
-	<label for="date">
-		<g:message code="activity.date.label" default="Date" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="date" precision="day"  value="${activityInstance?.date}"  />
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: activityInstance, field: 'startTime', 'error')} required">
 	<label for="startTime">
 		<g:message code="activity.startTime.label" default="Start Time" />

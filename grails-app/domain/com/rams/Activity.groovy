@@ -6,7 +6,6 @@ class Activity {
     // These are the attributes of an activity. Clearly.
     String name
     String number
-    Date date
     java.sql.Time startTime
     java.sql.Time endTime
     int maxEnrollment
@@ -28,8 +27,6 @@ class Activity {
 	// and must be unique. Format subject to change if we want
 	number(matches:'[1-9][0-9]{4}[.][0-9]{3}', unique:true)
 
-	// needs a date, cannot be blank
-	date(blank:false)
 
 	// Must have a start time
 	startTime(nullable:false

@@ -41,15 +41,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${activityInstance?.date}">
-				<li class="fieldcontain">
-					<span id="date-label" class="property-label"><g:message code="activity.date.label" default="Date" /></span>
-					
-						<span class="property-value" aria-labelledby="date-label"><g:formatDate date="${activityInstance?.date}" /></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${activityInstance?.startTime}">
 				<li class="fieldcontain">
 					<span id="startTime-label" class="property-label"><g:message code="activity.startTime.label" default="Start Time" /></span>
