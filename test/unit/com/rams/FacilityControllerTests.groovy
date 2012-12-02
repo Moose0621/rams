@@ -1,4 +1,4 @@
-package rams
+package com.rams
 
 
 
@@ -8,8 +8,8 @@ import org.junit.*
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@TestFor(LoginControlController)
-class LoginControlControllerTests {
+@TestFor(FacilityController)
+class FacilityControllerTests {
 
     void testSomething() {
        fail "Implement me"

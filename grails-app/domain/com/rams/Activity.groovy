@@ -1,6 +1,5 @@
 package com.rams
 
-import java.sql.Time
 
 class Activity {
 
@@ -8,8 +7,8 @@ class Activity {
     String name
     String number
     Date date
-    Time startTime
-    Time endTime
+    java.sql.Time startTime
+    java.sql.Time endTime
     int maxEnrollment
     int minAge
     int maxAge
