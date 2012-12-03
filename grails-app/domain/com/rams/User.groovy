@@ -13,7 +13,6 @@ class User {
     String phoneNumber
     Date birthdate
     Sex sex
-    Role role
     String eid
     String password
 
@@ -21,7 +20,11 @@ class User {
     // this field denots the user was recently created
     // setting this to false and any other handling takes place outside
     boolean brandNew
-
+	boolean enabled
+	
+	static hasMany = [authorities: com.rams.Role]
+	static belongsTo = com.rams.Role
+	
     static constraints = {
 
 	// these constraints are fairly simple.
@@ -55,11 +58,6 @@ class User {
 
 	// a gender
 	sex(nullable:true)
-
-	// user has a role
-	role(nullable:true
-		//TODO no removing admin logic
-		)
 
 	// employee id. 6 was chosen just because
 	eid(matches:'[0-9]{6}')
