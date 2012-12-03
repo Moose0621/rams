@@ -7,7 +7,6 @@ security {
 	loginUserDomainClass = "com.rams.User"
 	authorityDomainClass = "com.rams.Role"
 	requestMapClass = "Requestmap"
-	loginUserDomainClass = "User"
 	userName= "eid"
 	password = "password"
 
