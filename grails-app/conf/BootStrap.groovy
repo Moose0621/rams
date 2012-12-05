@@ -33,6 +33,7 @@ class BootStrap {
 	    println (role.validate())
 	    role.addToPeople(user)
 	    role.save()
+
 	    println (user.eid +"\t"+  user.password)
 	} else {
 	    println "Existing admin user, skipping creation"
