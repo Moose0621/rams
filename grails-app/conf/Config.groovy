@@ -90,5 +90,7 @@ log4j = {
            'net.sf.ehcache.hibernate'
 }
 
-
-//log4j.logger.org.springframework.security='off,stdout'
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.rams.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.rams.UserRole'
+grails.plugins.springsecurity.authority.className = 'com.rams.Role'

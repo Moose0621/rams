@@ -1,198 +1,122 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="layout" content="main" />
-<title>Welcome to Recreational Activity Management System</title>
-<style type="text/css" media="screen">
-#login {
-	margin: 15px 0px;
-	padding: 0px;
-	text-align: center;
-}
+	<head>
+		<meta name="layout" content="main"/>
+		<title>Welcome to Grails</title>
+		<style type="text/css" media="screen">
+			#status {
+				background-color: #eee;
+				border: .2em solid #fff;
+				margin: 2em 2em 1em;
+				padding: 1em;
+				width: 12em;
+				float: left;
+				-moz-box-shadow: 0px 0px 1.25em #ccc;
+				-webkit-box-shadow: 0px 0px 1.25em #ccc;
+				box-shadow: 0px 0px 1.25em #ccc;
+				-moz-border-radius: 0.6em;
+				-webkit-border-radius: 0.6em;
+				border-radius: 0.6em;
+			}
 
-#login .inner {
-	width: 260px;
-	margin: 0px auto;
-	text-align: left;
-	padding: 10px;
-	border-top: 1px dashed #499ede;
-	border-bottom: 1px dashed #499ede;
-	background-color: #EEF;
-}
+			.ie6 #status {
+				display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
+			}
 
-#login .inner .fheader {
-	padding: 4px;
-	margin: 3px 0px 3px 0;
-	color: #2e3741;
-	font-size: 14px;
-	font-weight: bold;
-}
+			#status ul {
+				font-size: 0.9em;
+				list-style-type: none;
+				margin-bottom: 0.6em;
+				padding: 0;
+			}
+            
+			#status li {
+				line-height: 1.3;
+			}
 
-#login .inner .cssform p {
-	clear: left;
-	margin: 0;
-	padding: 5px 0 8px 0;
-	padding-left: 105px;
-	border-top: 1px dashed gray;
-	margin-bottom: 10px;
-	height: 1%;
-}
+			#status h1 {
+				text-transform: uppercase;
+				font-size: 1.1em;
+				margin: 0 0 0.3em;
+			}
 
-#login .inner .cssform input[type='text'] {
-	width: 120px;
-}
+			#page-body {
+				margin: 2em 1em 1.25em 18em;
+			}
 
-#login .inner .cssform label {
-	font-weight: bold;
-	float: left;
-	margin-left: -105px;
-	width: 100px;
-}
+			h2 {
+				margin-top: 1em;
+				margin-bottom: 0.3em;
+				font-size: 1em;
+			}
 
-#login .inner .login_message {
-	color: red;
-}
+			p {
+				line-height: 1.5;
+				margin: 0.25em 0;
+			}
 
-#login .inner .text_ {
-	width: 120px;
-}
+			#controller-list ul {
+				list-style-position: inside;
+			}
 
-#login .inner .chk {
-	height: 12px;
-}
+			#controller-list li {
+				line-height: 1.3;
+				list-style-position: inside;
+				margin: 0.25em 0;
+			}
 
-#status {
-	background-color: #3399cc;
-	border: .2em solid #fff;
-	margin: 2em 2em 1em;
-	padding: 1em;
-	width: 12em;
-	float: left;
-	-moz-box-shadow: 0px 0px 1.25em #ccc;
-	-webkit-box-shadow: 0px 0px 1.25em #ccc;
-	box-shadow: 0px 0px 1.25em #ccc;
-	-moz-border-radius: 0.6em;
-	-webkit-border-radius: 0.6em;
-	border-radius: 0.6em;
-}
+			@media screen and (max-width: 480px) {
+				#status {
+					display: none;
+				}
 
-.ie6 #status {
-	display: inline;
-	/* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
-}
+				#page-body {
+					margin: 0 1em 1em;
+				}
 
-#status ul {
-	font-size: 0.9em;
-	list-style-type: none;
-	margin-bottom: 0.6em;
-	padding: 0;
-}
-
-#status li {
-	line-height: 1.3;
-}
-
-#status h1 {
-	text-transform: uppercase;
-	font-size: 1.1em;
-	margin: 0 0 0.3em;
-}
-
-#page-body {
-	margin: 2em 1em 1.25em 18em;
-}
-
-h2 {
-	margin-top: 1em;
-	margin-bottom: 0.3em;
-	font-size: 1em;
-}
-
-p {
-	line-height: 1.5;
-	margin: 0.25em 0;
-}
-
-#controller-list ul {
-	list-style-position: inside;
-}
-
-#controller-list li {
-	line-height: 1.3;
-	list-style-position: inside;
-	margin: 0.25em 0;
-}
-
-@media screen and (max-width: 480px) {
-	#status {
-		display: none;
-	}
-	#page-body {
-		margin: 0 1em 1em;
-	}
-	#page-body h1 {
-		margin-top: 0;
-	}
-}
-</style>
-</head>
-<body>
-	<a href="#page-body" class="skip"><g:message
-			code="default.link.skip.label" default="Skip to content&hellip;" /></a>
-	<div id="status" role="complementary">
-		<h2>Available Functions:</h2>
-
-		<g:each var="c"
-			in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-			<ul class="controller">
-				<g:link controller="${c.logicalPropertyName}">
-					${c.name}
-				</g:link>
+				#page-body h1 {
+					margin-top: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<div id="status" role="complementary">
+			<h1>Application Status</h1>
+			<ul>
+				<li>App version: <g:meta name="app.version"/></li>
+				<li>Grails version: <g:meta name="app.grails.version"/></li>
+				<li>Groovy version: ${org.codehaus.groovy.runtime.InvokerHelper.getVersion()}</li>
+				<li>JVM version: ${System.getProperty('java.version')}</li>
+				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
+				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
+				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
+				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
+				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
 			</ul>
-		</g:each>
-		<h1>Available Users</h1>
+			<h1>Installed Plugins</h1>
+			<ul>
+				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
+					<li>${plugin.name} - ${plugin.version}</li>
+				</g:each>
+			</ul>
+		</div>
+		<div id="page-body" role="main">
+			<h1>Welcome to Grails</h1>
+			<p>Congratulations, you have successfully started your first Grails application! At the moment
+			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
+			   content you may choose. Below is a list of controllers that are currently deployed in this application,
+			   click on each to execute its default action:</p>
 
-		<ul>
-			
-		</ul>
-	</div>
-	<div id="page-body" role="main">
-		<h1>Welcome to Recreational Activity Management System</h1>
-		<p>Hello, Welcome to the RAMS system for managing recreational
-			activity Please select an available feature on the left.</p>
-	</div>
-	<div id='login'>
-				<div class='inner'>
-					<g:if test='${flash.message}'>
-						<div class='login_message'>
-							${flash.message}
-						</div>
-					</g:if>
-					<div class='fheader'>Please Login..</div>
-					<form action='${postUrl}' method='POST' id='loginForm'
-						class='cssform'>
-						<p>
-							<label for='j_username'>Login ID</label> <input type='text'
-								class='text_' name='j_username' id='j_username'
-								value='${request.remoteUser}' />
-						</p>
-						<p>
-							<label for='j_password'>Password</label> <input type='password'
-								class='text_' name='j_password' id='j_password' />
-						</p>
-						<p>
-							<input type='submit' value='Login' />
-						</p>
-					</form>
-				</div>
+			<div id="controller-list" role="navigation">
+				<h2>Available Controllers:</h2>
+				<ul>
+					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
+					</g:each>
+				</ul>
 			</div>
-	
-<script type='text/javascript'>
-<!--
-(function(){
-	document.forms['loginForm'].elements['j_username'].focus();
-})();
-// -->
-</script>
-</body>
+		</div>
+	</body>
 </html>

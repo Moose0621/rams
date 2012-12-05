@@ -20,41 +20,41 @@ class Enrollment {
 
     static constraints = {
 
-	// these constraints are fairly simple.
+// these constraints are fairly simple.
 
-	// last name
-	lname(blank:false)
+// last name
+lname(blank:false)
 
-	// first name
-	fname(blank:false)
+// first name
+fname(blank:false)
 
-	// middle initial
-	mi(matches:'[A-Z]{1}',blank:true)
+// middle initial
+mi(matches:'[A-Z]{1}',blank:true)
 
-	// street address
-	address(blank:false)
+// street address
+address(blank:false)
 
-	// city
-	city(blank:false)
+// city
+city(blank:false)
 
-	// zipcode. five digits because screw zip+4
-	zipcode(matches:'[0-9]{5}')
+// zipcode. five digits because screw zip+4
+zipcode(matches:'[0-9]{5}')
 
-	// State abbreviaton
-	state(matches:'[A-Z]{2}')
+// State abbreviaton
+state(matches:'[A-Z]{2}')
 
-	// phone number, just 10 digits, can be formatted in view
-	phoneNumber(matches:'[0-9]{10}')
+// phone number, just 10 digits, can be formatted in view
+phoneNumber(matches:'[0-9]{10}')
 
-	// they were born, at some point
-	birthdate(nullable:false
-		//TODO age range logic
-		// could look something like
-		)
+// they were born, at some point
+birthdate(nullable:false
+//TODO age range logic
+// could look something like
+)
 
-	// a gender
-	sex(nullable:false)
+// a gender
+sex(nullable:false)
 
-	// somewhere outside checks if the activity is at max enrollment
+// somewhere outside checks if the activity is at max enrollment
     }
 }

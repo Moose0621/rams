@@ -15,23 +15,23 @@ class Facility {
 
     static constraints = {
 
-	// these constraints are fairly simple.
-	name(blank:false)
+// these constraints are fairly simple.
+name(blank:false)
 
-	// street address
-	address(blank:false)
+// street address
+address(blank:false)
 
-	// city
-	city(blank:false)
+// city
+city(blank:false)
 
-	// zipcode. five digits because screw zip+4
-	zipcode(matches:'[0-9]{5}')
+// zipcode. five digits because screw zip+4
+zipcode(matches:'[0-9]{5}', blank:false)
 
-	// State abbreviaton
-	state(matches:'[A-Z]{2}')
+// State abbreviaton
+state(matches:'[A-Z]{2}',blank:false)
 
-	// phone number, just 10 digits, can be formatted in view
-	phoneNumber(matches:'[0-9]{10}')
+// phone number, just 10 digits, can be formatted in view
+phoneNumber(matches:'[0-9]{10}',blank:false)
 
     }
 }

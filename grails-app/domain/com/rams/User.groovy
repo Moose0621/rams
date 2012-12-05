@@ -2,90 +2,48 @@ package com.rams
 
 class User {
 
-    // These are things for users
-    String lname
-    String fname
-    String mi
-    String address
-    String city
-    String state
-    String zipcode
-    String phoneNumber
-    Date birthdate
-    Sex sex
-    String eid
-    String password
+	transient springSecurityService
 
-    // Certain things were mentioned as entered the first time the user logs in
-    // this field denots the user was recently created
-    // setting this to false and any other handling takes place outside
-    boolean brandNew
+	String username
+	String password
 	boolean enabled
+	boolean accountExpired
+	boolean accountLocked
+	boolean passwordExpired
 	
-	static hasMany = [authorities: com.rams.Role]
-	static belongsTo = com.rams.Role
 	
-    static constraints = {
+	
+	
+	
+	
+	
+	
+	
 
-	// these constraints are fairly simple.
+	static constraints = {
+		username blank: false, unique: true
+		password blank: false
+	}
 
-	// last name
-	lname(blank:false)
+	static mapping = {
+		password column: '`password`'
+	}
 
-	// first name
-	fname(blank:false)
+	Set<Role> getAuthorities() {
+		UserRole.findAllByUser(this).collect { it.role } as Set
+	}
 
-	// middle initial
-	mi(matches:'[A-Z]{1}',blank:true, nullable: true)
+	def beforeInsert() {
+		encodePassword()
+	}
 
-	// street address
-	address(blank:false)
+	def beforeUpdate() {
+		if (isDirty('password')) {
+			encodePassword()
+		}
+	}
 
-	// city
-	city(blank:false)
-
-	// zipcode. five digits because screw zip+4
-	zipcode(matches:'[0-9]{5}')
-
-	// State abbreviaton
-	state(matches:'[A-Z]{2}')
-
-	// phone number, just 10 digits, can be formatted in view
-	phoneNumber(matches:'[0-9]{10}')
-
-	// they were born, at some point
-	birthdate(nullable:true)
-
-	// a gender
-	sex(nullable:true)
-
-	// employee id. 6 was chosen just because
-	eid(matches:'[0-9]{6}')
-
-	/*
-	 * We require certain information to be entered on first log in
-	 * I left this up to logic guy to implement but I would propose
-	 * a general format for the constraint for such an attribute
-	 * 
-	 * <field>(blank:true,
-	 * 		validator {<field>,user ->
-	 * 			if (!brandNew){
-	 * 				return true
-	 * 			} else {
-	 * 				if (<field>.equals("") {
-	 * 					return false
-	 * 				} else {
-	 * 					return true
-	 * 				}
-	 * 			}
-	 * 		}
-	 * 		)
-	 * 
-	 * This code (when written properly) should generally allow <field>
-	 * to be an empty string (which i think is meant by "blank" but if
-	 * the user is not newly created (first time they log in, we must
-	 * set brandNew to true in the logic) the field may not be blank
-	 */
-
-    }
+	protected void encodePassword() {
+		password = springSecurityService.encodePassword(password)
+	}
 }

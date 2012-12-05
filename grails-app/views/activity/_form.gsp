@@ -23,7 +23,7 @@
 		<g:message code="activity.startTime.label" default="Start Time" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="startTime" precision="minute"  value="${activityInstance?.startTime}"  />
+	<g:datePicker name="startTime" precision="day"  value="${activityInstance?.startTime}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: activityInstance, field: 'endTime', 'error')} required">
@@ -31,7 +31,7 @@
 		<g:message code="activity.endTime.label" default="End Time" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="endTime" precision="minute"  value="${activityInstance?.endTime}"  />
+	<g:datePicker name="endTime" precision="day"  value="${activityInstance?.endTime}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: activityInstance, field: 'maxEnrollment', 'error')} required">
@@ -63,16 +63,7 @@
 		<g:message code="activity.enrollments.label" default="Enrollments" />
 		
 	</label>
-	
-<ul class="one-to-many">
-<g:each in="${activityInstance?.enrollments?}" var="e">
-    <li><g:link controller="enrollment" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="enrollment" action="create" params="['activity.id': activityInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'enrollment.label', default: 'Enrollment')])}</g:link>
-</li>
-</ul>
-
+	<g:select name="enrollments" from="${com.rams.Enrollment.list()}" multiple="multiple" optionKey="id" size="5" value="${activityInstance?.enrollments*.id}" class="many-to-many"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: activityInstance, field: 'facility', 'error')} required">
