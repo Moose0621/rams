@@ -51,12 +51,12 @@
 			<div class='fheader'>Please Login..</div>
 			<form action='${postUrl}' method='POST' id='loginForm' class='cssform'>
 				<p>
-					<label for='j_username'>Login ID</label>
-					<input type='text' class='text_' name='j_username' id='j_username' value='${request.remoteUser}' />
+						<label for='j_username'>Login ID</label>
+						<input type='text' class='text_' name='j_username' id='j_username' value='${request.remoteUser}' />
 				</p>
 				<p>
 					<label for='j_password'>Password</label>
-					<input type='password' class='text_' name='j_password' id='j_password' />
+					<input type='password' class='text_' name='j_password' id='j_password' value='${request.authenticate()}' />
 				</p>
 				<p>
 					<input type='submit' value='Login' />
