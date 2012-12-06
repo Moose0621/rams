@@ -141,8 +141,7 @@ p {
 			code="default.link.skip.label" default="Skip to content&hellip;" /></a>
 	<div id="status" role="complementary">
 		<h2>Available Functions:</h2>
-
-		<g:each var="c"
+		 <g:each var="c"
 			in="${grailsApplication.controllerClasses.sort { it.fullName } }">
 			<ul class="controller">
 				<g:link controller="${c.logicalPropertyName}">
@@ -150,8 +149,8 @@ p {
 				</g:link>
 			</ul>
 		</g:each>
-		<h1>Available Users</h1>
-
+		<h1>Available Activities</h1>
+			
 		<ul>
 
 		</ul>
