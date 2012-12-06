@@ -17,13 +17,13 @@
 	padding: 10px;
 	border-top: 1px dashed #499ede;
 	border-bottom: 1px dashed #499ede;
-	background-color: #EEF;
+	background-color: #3399cc;
 }
 
 #login .inner .fheader {
 	padding: 4px;
 	margin: 3px 0px 3px 0;
-	color: #2e3741;
+	color: #3399cc;
 	font-size: 14px;
 	font-weight: bold;
 }
