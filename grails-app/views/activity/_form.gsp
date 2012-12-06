@@ -23,7 +23,7 @@
 		<g:message code="activity.startTime.label" default="Start Time" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="startTime" precision="day"  value="${activityInstance?.startTime}"  />
+	<g:datePicker name="startTime" precision="minute"  value="${activityInstance?.startTime}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: activityInstance, field: 'endTime', 'error')} required">
@@ -31,7 +31,7 @@
 		<g:message code="activity.endTime.label" default="End Time" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="endTime" precision="day"  value="${activityInstance?.endTime}"  />
+	<g:datePicker name="endTime" precision="minute"  value="${activityInstance?.endTime}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: activityInstance, field: 'maxEnrollment', 'error')} required">
