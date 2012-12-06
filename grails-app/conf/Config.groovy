@@ -97,10 +97,17 @@ grails.plugins.springsecurity.authority.className = 'com.rams.Role'
 
 grails.plugins.springsecurity.securityConfigType = 'InterceptUrlMap'
 grails.plugins.springsecurity.interceptUrlMap = [
-	'/login/auth':               ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/login/*':             	['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/logout/*':             	['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/activity/create':		['ROLE_ADMIN','ROLE_SUPERVISOR','IS_AUTHENTICATED_REMEMBERED'],
+	'/activity/edit/*':			['ROLE_ADMIN','ROLE_SUPERVISOR','IS_AUTHENTICATED_REMEMBERED'],
+	'/facility/create':		['ROLE_ADMIN','ROLE_SUPERVISOR','IS_AUTHENTICATED_REMEMBERED'],
+	'/facility/edit/*':			['ROLE_ADMIN','ROLE_SUPERVISOR','IS_AUTHENTICATED_REMEMBERED'],
+	'/user/create':			['ROLE_ADMIN','ROLE_SUPERVISOR','IS_AUTHENTICATED_REMEMBERED'],
+	'/user/edit/*':				['ROLE_ADMIN','ROLE_SUPERVISOR','IS_AUTHENTICATED_REMEMBERED'],
 	//'/**':               ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/css/*':               ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/js/*':               ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/images/*':               ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/**':               ['IS_AUTHENTICATED_REMEMBERED']
+	'/css/*':               	['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/js/*':               		['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/images/*':               	['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/**':               		['IS_AUTHENTICATED_REMEMBERED']
 ]
