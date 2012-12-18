@@ -56,7 +56,7 @@ body {
 .ie6 body,
 .ie7 body,
 .ie8 body {
-	border-color: #255b17;
+	border-color: #297563;
 	border-style: solid;
 	border-width: 0 1px;
 }
@@ -66,7 +66,7 @@ body {
 }
 
 a:link, a:visited, a:hover {
-	color: #48802c;
+	color: blue;
 }
 
 a:hover, a:active {
@@ -91,7 +91,7 @@ img {
 /* GENERAL */
 
 #grailsLogo a {
-	display: inline-block;
+	display: center;
 	margin: 1em;
 }
 
@@ -109,7 +109,7 @@ img {
 }
 
 .footer {
-	background: #00A2E8;
+	background: #45625e;
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
@@ -136,7 +136,7 @@ img {
 /* NAVIGATION MENU */
 
 .nav {
-	background-color: #003399;
+	background-color: #339933;
 	padding: 0.5em 0.75em;
 	   -moz-box-shadow: 0 0 3px 1px #aaaaaa;
 	-webkit-box-shadow: 0 0 3px 1px #aaaaaa;
@@ -159,7 +159,7 @@ img {
 }
 
 .nav a {
-	color: #666666;
+	color: #000000;
 	display: block;
 	padding: 0.25em 0.7em;
 	text-decoration: none;
@@ -169,7 +169,7 @@ img {
 }
 
 .nav a:active, .nav a:visited {
-	color: #666666;
+	color: #0033CC;
 }
 
 .nav a:focus, .nav a:hover {

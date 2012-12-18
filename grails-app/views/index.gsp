@@ -62,8 +62,8 @@
 }
 
 #status {
-	background-color: #3399cc;
-	border: .2em solid #fff;
+	background-color: forestgreen;
+	border: .2em solid #159852;
 	margin: 2em 2em 1em;
 	padding: 1em;
 	width: 12em;
@@ -149,11 +149,11 @@ p {
 				</g:link>
 			</ul>
 		</g:each>
-		<h1>Available Activities</h1>
-			
-		<ul>
-
-		</ul>
+		<h2>Available Events</h2>
+<%--			<g:link controller="${grailsApplication.controllerClasses.LogoutController}">--%>
+<%--					${grailsApplication.controllerClasses.LogoutController.name}--%>
+<%--				</g:link>--%>
+<%--		</ul>--%>
 	</div>
 	<div id="page-body" role="main">
 		<h1>Welcome to Recreational Activity Management System</h1>
